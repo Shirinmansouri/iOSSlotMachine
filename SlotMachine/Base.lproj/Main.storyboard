@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="SlotMachine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="zbt-cM-JDx">
+                                <rect key="frame" x="9" y="80" width="396" height="77"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bet" translatesAutoresizingMaskIntoConstraints="NO" id="gQO-dt-m3C">
+                                        <rect key="frame" x="0.0" y="0.0" width="102" height="77"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jackpot" translatesAutoresizingMaskIntoConstraints="NO" id="hDk-Dc-7kh">
+                                        <rect key="frame" x="147" y="0.0" width="102" height="77"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollar" translatesAutoresizingMaskIntoConstraints="NO" id="6iU-eC-Yzi">
+                                        <rect key="frame" x="294" y="0.0" width="102" height="77"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="77" id="0rV-mf-yst"/>
+                                    <constraint firstAttribute="width" constant="396" id="bgt-Cf-VCh"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="73" translatesAutoresizingMaskIntoConstraints="NO" id="62Q-GZ-Ywu">
+                                <rect key="frame" x="20" y="165" width="374" height="62.5"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" minimumFontSize="17" background="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="RzT-81-btt">
+                                        <rect key="frame" x="0.0" y="0.0" width="76" height="62.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="33">
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="72" name="AvenirNext-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" minimumFontSize="17" background="square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mTk-P4-rj1">
+                                        <rect key="frame" x="149" y="0.0" width="76" height="62.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="7">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.99997766239999997" green="0.69863504139999999" blue="0.1472475765" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <font key="NSFont" size="64" name="AvenirNext-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" minimumFontSize="17" background="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="RG0-F4-DK4">
+                                        <rect key="frame" x="298" y="0.0" width="76" height="62.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="38">
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="72" name="AvenirNext-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="ECP-8h-Ge2"/>
+                                    <constraint firstAttribute="height" constant="62.5" id="KkF-Ab-eYc"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hRG-R0-FVL">
+                                <rect key="frame" x="5" y="315" width="404" height="200"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="S5d-dO-9La">
+                                        <rect key="frame" x="0.0" y="0.0" width="121.5" height="200"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car (1)" translatesAutoresizingMaskIntoConstraints="NO" id="7CU-ZC-MKa">
+                                        <rect key="frame" x="141.5" y="0.0" width="121" height="200"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sedan" translatesAutoresizingMaskIntoConstraints="NO" id="Rdc-Gr-fNy">
+                                        <rect key="frame" x="282.5" y="0.0" width="121.5" height="200"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="6Jd-do-GqV"/>
+                                    <constraint firstAttribute="width" constant="405" id="LCh-8n-QHy"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FjX-7u-6l4">
+                                <rect key="frame" x="7" y="703" width="400" height="72"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MmD-rW-fi7">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="72"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="FgO-Uv-DgF"/>
+                                            <constraint firstAttribute="height" constant="72" id="f2d-Hg-wWE"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <backgroundConfiguration key="background" cornerRadius="20">
+                                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                            </backgroundConfiguration>
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Quit">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="24" name="AvenirNext-BoldItalic"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIt-Ha-Tma">
+                                        <rect key="frame" x="140" y="0.0" width="120" height="72"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="72" id="Sy7-qM-iGi"/>
+                                            <constraint firstAttribute="width" constant="120" id="W2Z-t2-PX9"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" cornerStyle="large" titleAlignment="center">
+                                            <backgroundConfiguration key="background" strokeWidth="10">
+                                                <color key="backgroundColor" red="0.19512489175412359" green="0.44058049934205568" blue="0.74171187239463876" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="strokeColor" red="0.49971439270000001" green="0.7651112135" blue="0.91408730220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </backgroundConfiguration>
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Spin">
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="36" name="AvenirNext-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ig3-1l-HaH">
+                                        <rect key="frame" x="280" y="0.0" width="120" height="72"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="72" id="4DQ-yB-keu"/>
+                                            <constraint firstAttribute="width" constant="120" id="Qks-IO-b6F"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <backgroundConfiguration key="background" cornerRadius="20">
+                                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                            </backgroundConfiguration>
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Reset">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="24" name="AvenirNext-BoldItalic"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="p3V-Hn-gGq"/>
+                                    <constraint firstAttribute="height" constant="72" id="vF9-rv-vm8"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="62Q-GZ-Ywu" secondAttribute="trailing" constant="20" id="1vR-LP-y6T"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="FjX-7u-6l4" secondAttribute="bottom" constant="87" id="4GH-10-a77"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="hRG-R0-FVL" secondAttribute="trailing" constant="5" id="4fN-nN-UU4"/>
+                            <constraint firstItem="zbt-cM-JDx" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="9" id="5Ny-KE-0Cs"/>
+                            <constraint firstItem="62Q-GZ-Ywu" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="20" id="5lY-Yl-D3v"/>
+                            <constraint firstItem="hRG-R0-FVL" firstAttribute="top" secondItem="62Q-GZ-Ywu" secondAttribute="bottom" constant="87.5" id="6JF-EO-meq"/>
+                            <constraint firstItem="zbt-cM-JDx" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="36" id="Dfh-Mf-BQc"/>
+                            <constraint firstItem="62Q-GZ-Ywu" firstAttribute="top" secondItem="zbt-cM-JDx" secondAttribute="bottom" constant="8" symbolic="YES" id="JLS-bb-dri"/>
+                            <constraint firstItem="FjX-7u-6l4" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="7" id="Mo4-w7-N3n"/>
+                            <constraint firstItem="hRG-R0-FVL" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="5" id="Rv8-L3-0cY"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="62Q-GZ-Ywu" secondAttribute="bottom" constant="634.5" id="iMk-Td-sMx"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="zbt-cM-JDx" secondAttribute="trailing" constant="9" id="leF-rH-eMg"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="FjX-7u-6l4" secondAttribute="trailing" constant="7" id="vxf-Vx-aFU"/>
+                            <constraint firstItem="FjX-7u-6l4" firstAttribute="top" secondItem="hRG-R0-FVL" secondAttribute="bottom" constant="188" id="xdK-AN-18l"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="69.642857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bet" width="512" height="512"/>
+        <image name="car" width="512" height="512"/>
+        <image name="car (1)" width="512" height="512"/>
+        <image name="circle.fill" catalog="system" width="128" height="121"/>
+        <image name="dollar" width="512" height="512"/>
+        <image name="jackpot" width="512" height="512"/>
+        <image name="sedan" width="512" height="512"/>
+        <image name="square" catalog="system" width="128" height="114"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
