@@ -1,9 +1,22 @@
-//
-//  GameScene.swift
-//  SlotMachine
-//
-//  Created by Shirin Mansouri on 2022-01-23.
-//
+/*
+ App        : Assignment 1 – Slot Machine - Part 1
+ Version    : Part 3
+ --------------------------
+ Group #12
+ --------------------------
+ Author     : Shirin Mansouri
+ Student ID : 301131068
+ --------------------------
+ Author     : Ali Roudak
+ Student ID : 301216533
+ --------------------------
+ Author     : Ashakn Goharfar
+ Student ID : 301206729
+ --------------------------
+ Date       : 23/01/2022
+ --------------------------
+ */
+
 
 import SpriteKit
 import GameplayKit
