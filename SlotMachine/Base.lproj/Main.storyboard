@@ -34,16 +34,16 @@
                                     <constraint firstAttribute="width" constant="396" id="bgt-Cf-VCh"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="73" translatesAutoresizingMaskIntoConstraints="NO" id="62Q-GZ-Ywu">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="62Q-GZ-Ywu">
                                 <rect key="frame" x="20" y="165" width="374" height="62.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" minimumFontSize="17" background="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="RzT-81-btt">
-                                        <rect key="frame" x="0.0" y="0.0" width="76" height="62.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="108" height="62.5"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="33">
+                                            <fragment content="1">
                                                 <attributes>
                                                     <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                    <font key="NSFont" size="72" name="AvenirNext-Bold"/>
+                                                    <font key="NSFont" size="25" name="AvenirNext-Bold"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -51,12 +51,12 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" minimumFontSize="17" background="square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mTk-P4-rj1">
-                                        <rect key="frame" x="149" y="0.0" width="76" height="62.5"/>
+                                        <rect key="frame" x="133" y="0.0" width="108" height="62.5"/>
                                         <attributedString key="attributedText">
                                             <fragment content="7">
                                                 <attributes>
                                                     <color key="NSColor" red="0.99997766239999997" green="0.69863504139999999" blue="0.1472475765" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <font key="NSFont" size="64" name="AvenirNext-Bold"/>
+                                                    <font key="NSFont" size="30" name="AvenirNext-Bold"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -64,17 +64,20 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="bezel" minimumFontSize="17" background="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="RG0-F4-DK4">
-                                        <rect key="frame" x="298" y="0.0" width="76" height="62.5"/>
+                                        <rect key="frame" x="266" y="0.0" width="108" height="62.5"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="38">
+                                            <fragment content="0">
                                                 <attributes>
                                                     <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                    <font key="NSFont" size="72" name="AvenirNext-Bold"/>
+                                                    <font key="NSFont" size="25" name="AvenirNext-Bold"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="txtMoneyEdited:forEvent:" destination="BV1-FR-VrT" eventType="editingDidEnd" id="g3M-EU-r6m"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -85,13 +88,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hRG-R0-FVL">
                                 <rect key="frame" x="5" y="315" width="404" height="200"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="S5d-dO-9La">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car1" translatesAutoresizingMaskIntoConstraints="NO" id="S5d-dO-9La">
                                         <rect key="frame" x="0.0" y="0.0" width="121.5" height="200"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car (1)" translatesAutoresizingMaskIntoConstraints="NO" id="7CU-ZC-MKa">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car2" translatesAutoresizingMaskIntoConstraints="NO" id="7CU-ZC-MKa">
                                         <rect key="frame" x="141.5" y="0.0" width="121" height="200"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sedan" translatesAutoresizingMaskIntoConstraints="NO" id="Rdc-Gr-fNy">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car4" translatesAutoresizingMaskIntoConstraints="NO" id="Rdc-Gr-fNy">
                                         <rect key="frame" x="282.5" y="0.0" width="121.5" height="200"/>
                                     </imageView>
                                 </subviews>
@@ -125,6 +128,9 @@
                                             </attributedString>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="btnQuit:" destination="BV1-FR-VrT" eventType="touchUpInside" id="kSt-FF-EeF"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIt-Ha-Tma">
                                         <rect key="frame" x="140" y="0.0" width="120" height="72"/>
@@ -150,6 +156,9 @@
                                             </attributedString>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="btnSpin:" destination="BV1-FR-VrT" eventType="touchUpInside" id="g0p-Vd-qLs"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ig3-1l-HaH">
                                         <rect key="frame" x="280" y="0.0" width="120" height="72"/>
@@ -173,6 +182,9 @@
                                             </attributedString>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="btnReset:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Dbx-VW-eae"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -200,6 +212,15 @@
                             <constraint firstItem="FjX-7u-6l4" firstAttribute="top" secondItem="hRG-R0-FVL" secondAttribute="bottom" constant="188" id="xdK-AN-18l"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnSpin" destination="fIt-Ha-Tma" id="JGe-05-Qy3"/>
+                        <outlet property="imgFirst" destination="S5d-dO-9La" id="Zcw-Ln-I3f"/>
+                        <outlet property="imgSecond" destination="7CU-ZC-MKa" id="p6n-3K-lGI"/>
+                        <outlet property="imgThird" destination="Rdc-Gr-fNy" id="GIQ-bX-HXS"/>
+                        <outlet property="txtBet" destination="RzT-81-btt" id="OCk-NV-PjM"/>
+                        <outlet property="txtJackpot" destination="mTk-P4-rj1" id="SPp-hO-RoK"/>
+                        <outlet property="txtMoney" destination="RG0-F4-DK4" id="Fam-GM-aWB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
@@ -208,12 +229,12 @@
     </scenes>
     <resources>
         <image name="bet" width="512" height="512"/>
-        <image name="car" width="512" height="512"/>
-        <image name="car (1)" width="512" height="512"/>
+        <image name="car1" width="512" height="512"/>
+        <image name="car2" width="512" height="512"/>
+        <image name="car4" width="512" height="512"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
         <image name="dollar" width="512" height="512"/>
         <image name="jackpot" width="512" height="512"/>
-        <image name="sedan" width="512" height="512"/>
         <image name="square" catalog="system" width="128" height="114"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
