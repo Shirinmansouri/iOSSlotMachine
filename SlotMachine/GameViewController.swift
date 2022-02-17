@@ -9,8 +9,19 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
+struct Info : Codable{
+    let id : Int
+    let name : String
+    let point : Int
+    let date : String
+    let jack : Int
+}
+
 class GameViewController: UIViewController {
-     
+    
+
+
+    
     @IBAction func txtMoneyEdited(_ sender: UITextField, forEvent event: UIEvent) {
         if (Int(txtMoney.text!)! < Int(txtBet.text!)!)
         {
@@ -38,8 +49,138 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var txtMoney: UITextField!
     
+    @IBOutlet weak var btnPayout: UITextField!
+    
+    var lastId : Int = 0
+    var lastJack : Int = 0
+    var lastPoint : Int = 0
+    var listOfInfo : [Info] = []
+    var userDefaults = UserDefaults.standard
+    let zeroInfo = Info(id: 0, name: "Sexy", point: 0, date: "today", jack: 0)
+
+    
     @IBAction func btnQuit(_ sender: UIButton) {
         exit(0)
+    }
+    
+    func idCounter() -> Int{
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        
+        do{
+            let aux = userDefaults.data(forKey: "Info")!
+            listOfInfo = try decoder.decode([Info].self, from: aux)
+            lastId = (listOfInfo[listOfInfo.count-1] as Info).id
+            return lastId
+        }
+        catch{
+            print("Unable to encode: (\(error))")
+            return 0
+        }
+    }
+    func lastJackpot() -> Int{
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        
+        listOfInfo.append(zeroInfo)
+        do{
+            let zeroEntry = try encoder.encode(listOfInfo)
+            userDefaults.set(zeroEntry, forKey: "Info")
+        }catch{
+            print("Unable to encode: (\(error))")
+        }
+        
+        do{
+            let aux = userDefaults.data(forKey: "Info")!
+            listOfInfo = try decoder.decode([Info].self, from: aux)
+            lastJack = (listOfInfo[listOfInfo.count-1] as Info).jack
+            return lastJack
+        }
+        catch{
+            print("Unable to encode: (\(error))")
+            return 0
+        }
+    }
+    func lastPay() -> Int{
+        
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        
+        listOfInfo.append(zeroInfo)
+        do{
+            let zeroEntry = try encoder.encode(listOfInfo)
+            userDefaults.set(zeroEntry, forKey: "Info")
+        }catch{
+            print("Unable to encode: (\(error))")
+        }
+        
+        do{
+            let aux = userDefaults.data(forKey: "Info")!
+            listOfInfo = try decoder.decode([Info].self, from: aux)
+            lastPoint = (listOfInfo[listOfInfo.count-1] as Info).point
+            return lastPoint
+        }
+        catch{
+            print("Unable to encode: (\(error))")
+            return 0
+        }
+    }
+    
+    
+    @IBAction func btnInfo(_ sender: UIButton) {
+        
+        let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+
+        var insertedDate = ""
+        let date = Date()
+        let calendar = Calendar.current
+        
+        let enteredJack : Int? = Int(txtJackpot.text!)
+        let enteredPayout : Int? = Int(btnPayout.text!)
+
+        insertedDate += String(calendar.component(.year, from: date)) + "/" + String(calendar.component(.month, from: date)) + "/" + String(calendar.component(.day, from: date))
+
+        listOfInfo.append(zeroInfo)
+        do{
+            let zeroEntry = try encoder.encode(listOfInfo)
+            userDefaults.set(zeroEntry, forKey: "Info")
+        }catch{
+            print("Unable to encode: (\(error))")
+        }
+        let newInfo : Info
+        newInfo = Info(id: idCounter()+1, name: "Alex", point: enteredPayout!, date: insertedDate, jack: enteredJack!)
+        do{
+            let aux = userDefaults.data(forKey: "Info")!
+            listOfInfo = try decoder.decode([Info].self, from: aux)
+            listOfInfo.append(newInfo)
+            let entry = try encoder.encode(listOfInfo)
+            userDefaults.set(entry, forKey: "Info")
+
+        }catch{
+            print("Unable to encode: (\(error))")
+        }
+        
+    }
+    
+    
+    func showToast(message : String, font: UIFont) {
+
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-100, width: 150, height: 35))
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLabel.textColor = UIColor.white
+        toastLabel.font = font
+        toastLabel.textAlignment = .center;
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds  =  true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
+             toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
     }
     
     @IBAction func btnSpin(_ sender: UIButton) {
@@ -47,6 +188,10 @@ class GameViewController: UIViewController {
         var money : Int?
         bet  = Int(txtBet.text!)
         money = Int(txtMoney.text!)
+        var oldJackPot : Int?
+        oldJackPot = Int(txtJackpot.text!)
+        var payOut : Int?
+        payOut = Int(btnPayout.text!)
         
         var number1=Int.random(in: 0...cars.count-1)
         imgFirst.image = UIImage(named:cars[number1])
@@ -57,12 +202,15 @@ class GameViewController: UIViewController {
         
         if (number1 == number2 && number2 == number3)
         {
-        
-            txtMoney.text = String(bet!*10 + money!)
+            btnPayout.text = String(payOut! + oldJackPot!)
+            txtJackpot.text = "0"
+            self.showToast(message: "You won jackpot!", font: .systemFont(ofSize: 14.0))
         }
         else
         {
             txtMoney.text = String(money!-bet! )
+            txtJackpot.text = String(oldJackPot! + bet! )
+            
         }
         if (Int( txtMoney.text!)! < Int(txtBet.text!)! )
         {
@@ -76,7 +224,8 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func btnReset(_ sender: UIButton) {
-        txtMoney.text = "0"
+        txtMoney.text = "15"
+        btnSpin.isEnabled = true;
         
     }
     
@@ -106,6 +255,9 @@ class GameViewController: UIViewController {
             {
                 btnSpin.isEnabled = true
             }
+            
+            txtJackpot.text = String(lastJackpot())
+            btnPayout.text = String(lastPay())
         }
     }
 

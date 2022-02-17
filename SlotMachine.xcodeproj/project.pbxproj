@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		143CB90427BDC5640007A216 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143CB90327BDC5640007A216 /* ViewController.swift */; };
 		BF61172C279E003100D5DD57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF61172B279E003100D5DD57 /* AppDelegate.swift */; };
 		BF61172E279E003100D5DD57 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF61172D279E003100D5DD57 /* GameScene.sks */; };
 		BF611730279E003100D5DD57 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = BF61172F279E003100D5DD57 /* Actions.sks */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		143CB90327BDC5640007A216 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BF611728279E003100D5DD57 /* SlotMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlotMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF61172B279E003100D5DD57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF61172D279E003100D5DD57 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				BF611735279E003100D5DD57 /* Main.storyboard */,
 				BF611738279E003200D5DD57 /* Assets.xcassets */,
 				BF61173A279E003200D5DD57 /* LaunchScreen.storyboard */,
+				143CB90327BDC5640007A216 /* ViewController.swift */,
 			);
 			path = SlotMachine;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			files = (
 				BF611732279E003100D5DD57 /* GameScene.swift in Sources */,
 				BF611734279E003100D5DD57 /* GameViewController.swift in Sources */,
+				143CB90427BDC5640007A216 /* ViewController.swift in Sources */,
 				BF61172C279E003100D5DD57 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,6 +456,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -479,6 +484,7 @@
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
