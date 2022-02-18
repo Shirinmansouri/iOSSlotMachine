@@ -82,6 +82,9 @@ class GameViewController: UIViewController {
         let encoder = JSONEncoder()
         let decoder = JSONDecoder()
         
+        let aux = userDefaults.data(forKey: "Info")!
+        if(aux.isEmpty){
+        
         listOfInfo.append(zeroInfo)
         do{
             let zeroEntry = try encoder.encode(listOfInfo)
@@ -89,9 +92,10 @@ class GameViewController: UIViewController {
         }catch{
             print("Unable to encode: (\(error))")
         }
+        }
         
         do{
-            let aux = userDefaults.data(forKey: "Info")!
+//            let aux = userDefaults.data(forKey: "Info")!
             listOfInfo = try decoder.decode([Info].self, from: aux)
             lastJack = (listOfInfo[listOfInfo.count-1] as Info).jack
             return lastJack
@@ -106,6 +110,9 @@ class GameViewController: UIViewController {
         let encoder = JSONEncoder()
         let decoder = JSONDecoder()
         
+        let aux = userDefaults.data(forKey: "Info")!
+        if(aux.isEmpty){
+        
         listOfInfo.append(zeroInfo)
         do{
             let zeroEntry = try encoder.encode(listOfInfo)
@@ -113,9 +120,10 @@ class GameViewController: UIViewController {
         }catch{
             print("Unable to encode: (\(error))")
         }
+        }
         
         do{
-            let aux = userDefaults.data(forKey: "Info")!
+//            let aux = userDefaults.data(forKey: "Info")!
             listOfInfo = try decoder.decode([Info].self, from: aux)
             lastPoint = (listOfInfo[listOfInfo.count-1] as Info).point
             return lastPoint
@@ -140,6 +148,9 @@ class GameViewController: UIViewController {
         let enteredPayout : Int? = Int(btnPayout.text!)
 
         insertedDate += String(calendar.component(.year, from: date)) + "/" + String(calendar.component(.month, from: date)) + "/" + String(calendar.component(.day, from: date))
+        
+        let aux = userDefaults.data(forKey: "Info")!
+        if(aux.isEmpty){
 
         listOfInfo.append(zeroInfo)
         do{
@@ -148,10 +159,11 @@ class GameViewController: UIViewController {
         }catch{
             print("Unable to encode: (\(error))")
         }
+        }
         let newInfo : Info
         newInfo = Info(id: idCounter()+1, name: "Alex", point: enteredPayout!, date: insertedDate, jack: enteredJack!)
         do{
-            let aux = userDefaults.data(forKey: "Info")!
+//            let aux = userDefaults.data(forKey: "Info")!
             listOfInfo = try decoder.decode([Info].self, from: aux)
             listOfInfo.append(newInfo)
             let entry = try encoder.encode(listOfInfo)
